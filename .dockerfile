@@ -10,9 +10,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 #This is for install dependecies in the node.js app folder.
-RUN npm install
+RUN npm install && npm install express
 
 #copy the app to the path,ovewritten if exists 
-copy test.js test.js
+COPY test.js test.js
 
 CMD ["node","test.js"]
